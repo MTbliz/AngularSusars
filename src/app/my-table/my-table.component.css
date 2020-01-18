@@ -1,0 +1,18 @@
+table {
+  width: 100%;
+}
+.mat-elevation-z8{
+background-color: white;
+}
+
+
+td{
+color: black;
+border-color:grey;
+}
+
+th{
+color: black;
+border-color:grey;
+}
+

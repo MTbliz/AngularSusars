@@ -1,0 +1,31 @@
+<mat-sidenav-container class="example-container" style="background-color: white">
+
+  <mat-sidenav  mode="side" opened >
+    <app-list-filters-studies></app-list-filters-studies>
+    <app-list-filters-countries></app-list-filters-countries>
+    <app-list-filters-sites></app-list-filters-sites>
+    <div>
+      <button mat-button mat-raised-button color="primary" (click)="pieChartLegend=!pieChartLegend">Toggle Legend</button>
+      <button mat-button mat-raised-button color="primary" (click)="changeLegendPosition()">Change Legend Position</button>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content >
+    <div>
+      <div>
+        <div class="chart">
+          <canvas baseChart
+                  [data]="pieChartData"
+                  [labels]="pieChartLabels"
+                  [chartType]="pieChartType"
+                  [options]="pieChartOptions"
+                  [plugins]="pieChartPlugins"
+                  [colors]="pieChartColors"
+                  [legend]="pieChartLegend">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

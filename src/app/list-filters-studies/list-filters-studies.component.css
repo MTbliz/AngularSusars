@@ -1,0 +1,9 @@
+.mat-list-option{
+font-size: 12px;
+overflow-wrap: break-word;
+}
+mat-selection-list{
+width: 150px;
+}
+
+
