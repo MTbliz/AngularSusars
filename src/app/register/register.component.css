@@ -1,0 +1,22 @@
+.col-md-12 {
+margin-top: 80px;
+  margin-left: 300px;
+  width: 50%;
+border: 10px solid #f1f1f1;
+background-color: #F8F8FF;
+padding: 10px;
+}
+
+.form-control {
+width: 50%;
+  padding: 12px 20px;
+
+  margin: 8px 40px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.alert-danger{
+color: red;
+}

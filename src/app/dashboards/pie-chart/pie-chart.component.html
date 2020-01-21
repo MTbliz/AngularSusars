@@ -5,16 +5,20 @@
     <app-list-filters-countries></app-list-filters-countries>
     <app-list-filters-sites></app-list-filters-sites>
     <div>
-      <button mat-button mat-raised-button color="primary" (click)="pieChartLegend=!pieChartLegend">Toggle Legend</button>
+      <button mat-button mat-raised-button color="primary" (click)="ToggleLegend()">Toggle Legend</button>
       <button mat-button mat-raised-button color="primary" (click)="changeLegendPosition()">Change Legend Position</button>
+      <button mat-button mat-raised-button color="primary" (click)="refresh()">Refresh Charts</button>
     </div>
   </mat-sidenav>
 
   <mat-sidenav-content >
+    <mat-grid-list cols="2" rowHeight="2:1" >
+      <mat-grid-tile >
+
     <div>
       <div>
-        <div class="chart">
-          <canvas baseChart
+        <div class="chart" >
+          <canvas  baseChart
                   [data]="pieChartData"
                   [labels]="pieChartLabels"
                   [chartType]="pieChartType"
@@ -26,6 +30,44 @@
         </div>
       </div>
     </div>
+        </mat-grid-tile>
+      <mat-grid-tile>
+
+    <div>
+      <div>
+        <div class="chart" >
+          <canvas  baseChart
+                  [data]="pieChartData2"
+                  [labels]="pieChartLabels2"
+                  [chartType]="pieChartType2"
+                  [options]="pieChartOptions2"
+                  [plugins]="pieChartPlugins2"
+                  [colors]="pieChartColors2"
+                  [legend]="pieChartLegend2">
+          </canvas>
+        </div>
+      </div>
+    </div>
+        </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+
+        <div>
+          <div>
+            <div class="chart" style="display: block">
+              <canvas
+                baseChart
+                      [datasets]="barChartData3"
+                      [labels]="barChartLabels3"
+                      [options]="barChartOptions3"
+                      [plugins]="barChartPlugins3"
+                      [legend]="barChartLegend3"
+                      [chartType]="barChartType3">
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
   </mat-sidenav-content>
 
 </mat-sidenav-container>

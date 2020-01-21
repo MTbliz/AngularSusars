@@ -2,5 +2,11 @@ mat-sidenav{
 width: 180px;
 }
 button{
-width: 180px;
+width: 179px;
 }
+
+.chart{
+width:600px;
+hight:600px;
+}
+

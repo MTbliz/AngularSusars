@@ -17,6 +17,7 @@ MatDatepickerModule,
 MatNativeDateModule,
 MatExpansionModule,
 MatIconModule,
+MatGridListModule,
 } from '@angular/material';
 
 
@@ -39,6 +40,7 @@ FormsModule,
 MatExpansionModule,
 MatIconModule,
 ChartsModule,
+MatGridListModule,
 ];
 
 @NgModule({

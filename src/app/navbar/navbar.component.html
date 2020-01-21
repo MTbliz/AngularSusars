@@ -1,9 +1,36 @@
 <mat-toolbar color="primary" class="navbar">
-  <div>
-    <button mat-button routerLink="/#Home/News">Home</button>
-    <button mat-button routerLink="/#Susars">SUSAR</button>
-    <button mat-button routerLink="/#Reports">Reports</button>
-    <button mat-button routerLink="/#Dashboards">Dashboards</button>
+  <div class="navbar-nav mr-auto" routerLinkActive="active">
+    <button mat-button *ngIf="isLoggedIn" routerLink="/#Home/News">Home</button>
+    <button mat-button *ngIf="isLoggedIn" routerLink="/#Susars">SUSAR</button>
+    <button mat-button *ngIf="isLoggedIn" routerLink="/#Reports">Reports</button>
+    <button mat-button *ngIf="isLoggedIn" routerLink="/#Dashboards">Dashboards</button>
+    <button mat-button class="nav-item" *ngIf="isLoggedIn" href="/user" class="nav-link"  routerLink="user">
+      User
+    </button>
   </div>
-  <div>Codevolution</div>
+
+  <div class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+    <button mat-button class="nav-item" a href="/register" class="nav-link" routerLink="register">
+      Sign Up
+    </button>
+    <button mat-button class="nav-item" href="/login" class="nav-link" routerLink="login">
+      Login
+    </button>
+  </div>
+
+  <div class="navbar-nav ml-auto" *ngIf="isLoggedIn" href="/profile" class="nav-link" routerLink="profile">
+    <button mat-button class="nav-item" *ngIf="showAdminBoard" href="/admin" class="nav-link" routerLink="admin">
+      Admin Board
+    </button>
+    <button mat-button class="nav-item" *ngIf="showModeratorBoard" href="/admin" class="nav-link" routerLink="admin">
+      Moderator Board
+    </button>
+    <button mat-button class="nav-item">
+      {{ username }}
+    </button>
+    <button mat-button class="nav-item"   href class="nav-link" (click)="logout()">
+      LogOut
+    </button>
+  </div>
 </mat-toolbar>
+

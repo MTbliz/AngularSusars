@@ -34,8 +34,14 @@ import { TeamDialogComponent } from './homepage/team/team-dialog/team-dialog.com
 import{TeamInteractionService} from 'src/app/homepage/team/team-interaction.service';
 import { TeamDialogUpdateComponent } from './homepage/team/team-dialog-update/team-dialog-update.component';
 import {LoginComponent} from 'src/app/login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+import { BoardUserComponent } from './board-user/board-user.component';
 
-
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
 
 
 
@@ -71,7 +77,13 @@ import {LoginComponent} from 'src/app/login/login.component';
     TeamTableComponent,
     TeamDialogComponent,
     TeamDialogUpdateComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent,
+    HomeComponent,
+    ProfileComponent,
+    BoardAdminComponent,
+    BoardModeratorComponent,
+    BoardUserComponent
   ],
   entryComponents: [DialogExampleComponent,DialogUpdateComponent,TeamDialogComponent, TeamDialogUpdateComponent],
   imports: [
@@ -81,7 +93,7 @@ import {LoginComponent} from 'src/app/login/login.component';
     MaterialModule,
 
   ],
-  providers: [InteractionService,SusarPipe, DashboardPipe,TeamInteractionService],
+  providers: [InteractionService,SusarPipe, DashboardPipe,TeamInteractionService, authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
