@@ -44,7 +44,7 @@ sitesAoR: Site[];
     plugins: {
       datalabels: {
       anchor: 'end',
-      align: 'center',
+      align: 'start',
         formatter: (value, ctx) => {
           const label = ctx.chart.data.labels[ctx.dataIndex];
           return label;
@@ -79,6 +79,7 @@ sitesAoR: Site[];
     plugins: {
       datalabels: {
       anchor: 'end',
+      align: 'start',
         formatter: (value, ctx) => {
           const label = ctx.chart.data.labels[ctx.dataIndex];
           return label;
@@ -116,7 +117,7 @@ sitesAoR: Site[];
     plugins: {
       datalabels: {
         anchor: 'center',
-        align: 'center',
+        align: 'top',
       }
     }
   };
@@ -230,7 +231,7 @@ console.log("Pies" + this.pieChartLabels)
         const duplicates2 = this._dashboardPipe.transformOnlySelectedCountries(this.allSusars, this.countriesAoR, this.studies, this.countries, this.sites).map(susar =>susar.country);
                                                                         this.pieChartLabels2 = this.removeDuplicates(duplicates2);
         const duplicates3 = this._dashboardPipe.transformOnlySelectedSites(this.allSusars, this.sitesAoR, this.studies, this.countries, this.sites).map(susar =>susar.site);
-                                                                                this.barChartLabels3 = this.removeDuplicates(duplicates3);
+                                                                                this.barChartLabels3 = this.removeDuplicates(duplicates3).sort();
         }
         }
         );
@@ -253,7 +254,7 @@ console.log("Pies" + this.pieChartLabels)
             const duplicates2 = this._dashboardPipe.transformOnlySelectedCountries(this.allSusars, this.countriesAoR, this.studies, this.countries, this.sites).map(susar =>susar.country);
                                                                                     this.pieChartLabels2 = this.removeDuplicates(duplicates2);
             const duplicates3 = this._dashboardPipe.transformOnlySelectedSites(this.allSusars, this.sitesAoR, this.studies, this.countries, this.sites).map(susar =>susar.site);
-                                                                                     this.barChartLabels3 = this.removeDuplicates(duplicates3);
+                                                                                     this.barChartLabels3 = this.removeDuplicates(duplicates3).sort();
             } else {
             this.countries = [];
             this.pieChartData = this._dashboardPipe.transform(this.allSusars, this.types, this.studies, this.countries, this.sites);
@@ -267,7 +268,7 @@ console.log("Pies" + this.pieChartLabels)
             const duplicates2 = this._dashboardPipe.transformOnlySelectedCountries(this.allSusars, this.countriesAoR, this.studies, this.countries, this.sites).map(susar =>susar.country);
                                                                                     this.pieChartLabels2 = this.removeDuplicates(duplicates2);
             const duplicates3 = this._dashboardPipe.transformOnlySelectedSites(this.allSusars, this.sitesAoR, this.studies, this.countries, this.sites).map(susar =>susar.site);
-                                                                                     this.barChartLabels3 = this.removeDuplicates(duplicates3);
+                                                                                     this.barChartLabels3 = this.removeDuplicates(duplicates3).sort();
             }
             }
             );
@@ -291,7 +292,7 @@ console.log("Pies" + this.pieChartLabels)
                  const duplicates2 = this._dashboardPipe.transformOnlySelectedCountries(this.allSusars, this.countriesAoR, this.studies, this.countries, this.sites).map(susar =>susar.country);
                                                                                          this.pieChartLabels2 = this.removeDuplicates(duplicates2);
                  const duplicates3 = this._dashboardPipe.transformOnlySelectedSites(this.allSusars, this.sitesAoR, this.studies, this.countries, this.sites).map(susar =>susar.site);
-                                                                                          this.barChartLabels3 = this.removeDuplicates(duplicates3);
+                                                                                          this.barChartLabels3 = this.removeDuplicates(duplicates3).sort();
                  } else {
                  this.sites = [];
                  this.pieChartData = this._dashboardPipe.transform(this.allSusars, this.types, this.studies, this.countries, this.sites);
@@ -305,7 +306,7 @@ console.log("Pies" + this.pieChartLabels)
                  const duplicates2 = this._dashboardPipe.transformOnlySelectedCountries(this.allSusars, this.countriesAoR, this.studies, this.countries, this.sites).map(susar =>susar.country);
                                                                                          this.pieChartLabels2 = this.removeDuplicates(duplicates2);
                  const duplicates3 = this._dashboardPipe.transformOnlySelectedSites(this.allSusars, this.sitesAoR, this.studies, this.countries, this.sites).map(susar =>susar.site);
-                                                                                          this.barChartLabels3 = this.removeDuplicates(duplicates3);
+                                                                                          this.barChartLabels3 = this.removeDuplicates(duplicates3).sort();
                  }
                  }
                  );
@@ -347,7 +348,11 @@ console.log("Pies" + this.pieChartLabels)
                    const duplicates2 = this._dashboardPipe.transformOnlySelectedCountries(this.allSusars, this.countriesAoR, this.studies, this.countries, this.sites).map(susar =>susar.country);
                                                                                            this.pieChartLabels2 = this.removeDuplicates(duplicates2);
                    const duplicates3 = this._dashboardPipe.transformOnlySelectedSites(this.allSusars, this.sitesAoR, this.studies, this.countries, this.sites).map(susar =>susar.site);
-                                                                                            this.barChartLabels3 = this.removeDuplicates(duplicates3);
+                                                                                            this.barChartLabels3 = this.removeDuplicates(duplicates3).sort();
+                                                                                            console.log('True ' + this._dashboardPipe.transformAoRSiteTrue(this.allSusars, this.sitesAoR, this.studies, this.countries, this.sites));
+                                                                                            console.log('False ' + this._dashboardPipe.transformAoRSiteFalse(this.allSusars, this.sitesAoR, this.studies, this.countries, this.sites));
+                                                                                            console.log('label ' + this.barChartLabels3);
+
   }
 
 

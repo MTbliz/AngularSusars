@@ -2,7 +2,6 @@
   <div class="navbar-nav mr-auto" routerLinkActive="active">
     <button mat-button *ngIf="isLoggedIn" routerLink="/#Home/News">Home</button>
     <button mat-button *ngIf="isLoggedIn" routerLink="/#Susars">SUSAR</button>
-    <button mat-button *ngIf="isLoggedIn" routerLink="/#Reports">Reports</button>
     <button mat-button *ngIf="isLoggedIn" routerLink="/#Dashboards">Dashboards</button>
     <button mat-button class="nav-item" *ngIf="isLoggedIn" href="/user" class="nav-link"  routerLink="user">
       User
@@ -18,11 +17,11 @@
     </button>
   </div>
 
-  <div class="navbar-nav ml-auto" *ngIf="isLoggedIn" href="/profile" class="nav-link" routerLink="profile">
+  <div class="navbar-nav ml-auto" *ngIf="isLoggedIn" class="nav-link" >
     <button mat-button class="nav-item" *ngIf="showAdminBoard" href="/admin" class="nav-link" routerLink="admin">
       Admin Board
     </button>
-    <button mat-button class="nav-item" *ngIf="showModeratorBoard" href="/admin" class="nav-link" routerLink="admin">
+    <button mat-button class="nav-item" *ngIf="showModeratorBoard" href="/mod" class="nav-link" routerLink="mod">
       Moderator Board
     </button>
     <button mat-button class="nav-item">

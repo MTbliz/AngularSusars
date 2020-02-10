@@ -71,7 +71,12 @@ return numberArray;
 
  transformAoRSiteTrue(susars:Susar[], susarSiteTypes:Site[], susarStudies:string[], susarCountries:string[], susarSites:string[]):number[]{
       const numberAoRArray: number[] = [];
-      for (let site of susarSiteTypes){
+      const filtredSusars = this.transformOnlySelectedSites(susars, susarSiteTypes, susarStudies, susarCountries, susarSites)
+      const filtredSites = filtredSusars.map(susar=>susar.site);
+      const sites = this.removeDuplicates(filtredSites);
+
+
+      for (let site of sites){
                var resultAoRSiteArrayTrue: Susar[] = [];
                        if (susarSiteTypes.length === 0 && susarStudies.length === 0 && susarCountries.length === 0 && susarSites.length === 0) {
                        resultAoRSiteArrayTrue = susars;
@@ -80,7 +85,7 @@ return numberArray;
                        if (susar.type != null) {
                        if (susar.study != null && (susarStudies.indexOf(susar.study) !== -1 || susarStudies.length === 0)) {
                        if (susar.country != null && (susarCountries.indexOf(susar.country) !== -1 || susarCountries.length === 0)) {
-                       if (susar.site != null &&  site.site === susar.site && (susarSites.indexOf(susar.site) !== -1 || susarSites.length === 0 )) {
+                       if (susar.site != null &&  site === susar.site && (susarSites.indexOf(susar.site) !== -1 || susarSites.length === 0 )) {
 
                                         if(susar.aorDate != null){
                                            const newSusar = new Susar(susar.iD, susar.study, susar.country, susar.site, susar.number, susar.type, susar.reciptDate, susar.sentDate, susar.aorDate);
@@ -101,8 +106,13 @@ return numberArray;
 
 
  transformAoRSiteFalse(susars:Susar[], susarSiteTypes:Site[], susarStudies:string[], susarCountries:string[], susarSites:string[]):number[]{
-      const numberAoRArray: number[] = [];
-      for (let site of susarSiteTypes){
+     const numberAoRArray: number[] = [];
+           const filtredSusars = this.transformOnlySelectedSites(susars, susarSiteTypes, susarStudies, susarCountries, susarSites)
+           const filtredSites = filtredSusars.map(susar=>susar.site);
+           const sites = this.removeDuplicates(filtredSites);
+
+
+           for (let site of sites){
                var resultAoRSiteArrayFalse: Susar[] = [];
                        if (susarSiteTypes.length === 0 && susarStudies.length === 0 && susarCountries.length === 0 && susarSites.length === 0) {
                        resultAoRSiteArrayFalse = susars;
@@ -111,7 +121,7 @@ return numberArray;
                        if (susar.type != null) {
                        if (susar.study != null && (susarStudies.indexOf(susar.study) !== -1 || susarStudies.length === 0)) {
                        if (susar.country != null && (susarCountries.indexOf(susar.country) !== -1 || susarCountries.length === 0)) {
-                       if (susar.site != null &&  site.site === susar.site && (susarSites.indexOf(susar.site) !== -1 || susarSites.length === 0 )) {
+                       if (susar.site != null &&  site === susar.site && (susarSites.indexOf(susar.site) !== -1 || susarSites.length === 0 )) {
 
                                         if(susar.aorDate == null){
                                            const newSusar = new Susar(susar.iD, susar.study, susar.country, susar.site, susar.number, susar.type, susar.reciptDate, susar.sentDate, susar.aorDate);
@@ -207,6 +217,16 @@ transformOnlySelectedSites(susars:Susar[], susarSiteTypes:Site[], susarStudies:s
       return resultArray;
       }
 
+removeDuplicates(duplicates: string[]):string[]{
+      var noDuplicatesArray: string [] = []
+      for(let duplicate of duplicates){
+
+      if(noDuplicatesArray.indexOf(duplicate) === -1){
+      noDuplicatesArray.push(duplicate)
+      }
+      }
+      return noDuplicatesArray;
+      }
 
 
 }
