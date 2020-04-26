@@ -15,7 +15,7 @@ import{TeamInteractionService} from 'src/app/homepage/team/team-interaction.serv
 })
 export class TeamDialogUpdateComponent implements OnInit {
 
-teamModel = new Specialist (null,'','','','');
+  teamModel = new Specialist (null,'','','','');
 
 httpOptions = {
   headers: new HttpHeaders({
