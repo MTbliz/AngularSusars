@@ -1,23 +1,23 @@
-<form #specialistForm="ngForm"  (ngSubmit)="updateSpecialist()" novalidate>
+<form #specialistForm="ngForm" (ngSubmit)="updateSpecialist()" novalidate>
   <ol class="example-container">
     <li>
       <mat-form-field>
-        <input  matInput placeholder="Name" [(ngModel)] = "data.name" name="name">
+        <input matInput placeholder="Name" [(ngModel)]="data.name" name="name">
       </mat-form-field>
     </li>
     <li>
       <mat-form-field>
-        <input  matInput placeholder="lastName" [(ngModel)] = "data.lastName" name="lastName">
+        <input matInput placeholder="lastName" [(ngModel)]="data.lastName" name="lastName">
       </mat-form-field>
     </li>
     <li>
       <mat-form-field>
-        <input  matInput placeholder="Study" [(ngModel)] = "data.study" name="study">
+        <input matInput placeholder="Study" [(ngModel)]="data.study" name="study">
       </mat-form-field>
     </li>
     <li>
       <mat-form-field>
-        <input  matInput placeholder="Country" [(ngModel)] = "data.country" name="country">
+        <input matInput placeholder="Country" [(ngModel)]="data.country" name="country">
       </mat-form-field>
     </li>
   </ol>
@@ -26,4 +26,3 @@
   <button mat-raised-button color="primary" (click)="closeDialog()">Cancel</button>
   <button mat-raised-button color="primary" type="submit" (click)="updateSpecialist()">Update</button>
 </div>
-

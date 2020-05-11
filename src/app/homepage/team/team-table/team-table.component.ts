@@ -1,12 +1,12 @@
-import { Component, ViewChild, OnInit} from '@angular/core';
-import {MatTableDataSource, MatSort, MatPaginator} from '@angular/material';
-import {Specialist} from 'src/app/homepage/team/specialist'
-import {TeamService} from 'src/app/homepage/team/team.service'
-import {Observable} from 'rxjs/Observable';
-import {MatDialog} from '@angular/material';
-import {TeamDialogComponent} from 'src/app/homepage/team/team-dialog/team-dialog.component';
-import {TeamDialogUpdateComponent} from 'src/app/homepage/team/team-dialog-update/team-dialog-update.component';
-import{TeamInteractionService} from 'src/app/homepage/team/team-interaction.service';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { Specialist } from 'src/app/homepage/team/specialist'
+import { TeamService } from 'src/app/homepage/team/team.service'
+import { Observable } from 'rxjs/Observable';
+import { MatDialog } from '@angular/material';
+import { TeamDialogComponent } from 'src/app/homepage/team/team-dialog/team-dialog.component';
+import { TeamDialogUpdateComponent } from 'src/app/homepage/team/team-dialog-update/team-dialog-update.component';
+import { TeamInteractionService } from 'src/app/homepage/team/team-interaction.service';
 
 @Component({
   selector: 'app-team-table',
@@ -16,56 +16,53 @@ import{TeamInteractionService} from 'src/app/homepage/team/team-interaction.serv
 })
 export class TeamTableComponent implements OnInit {
 
-dataSource;
+  dataSource;
 
-  constructor(private teamService: TeamService,private teamInteractionService: TeamInteractionService, public dialog: MatDialog) { }
+  constructor(private teamService: TeamService, private teamInteractionService: TeamInteractionService, public dialog: MatDialog) { }
 
   displayedColumns: string[] = ['iD', 'name', 'lastname', 'study', 'country', 'actions'];
 
-  @ViewChild(MatSort, {static: false}) sort: MatSort;
-      @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: false }) sort: MatSort;
+  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
   applyFilter(filterValue: string) {
-  this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
   ngOnInit() {
-  this.teamInteractionService.teamMessage$
-          .subscribe(
-          message => {
-          if(message === 'refreshTeamTable'){
-  this.getTeam();
-  }
-  }
-  );
-  this.getTeam();
+    this.teamInteractionService.teamMessage$
+      .subscribe(
+        message => {
+          if (message === 'refreshTeamTable') {
+            this.getTeam();
+          }
+        }
+      );
+    this.getTeam();
   }
 
-
-private getTeam(){
+  private getTeam() {
     this.teamService.getTeam()
-        .subscribe(response => { console.log(response);
+      .subscribe(response => {
         this.dataSource = response;
-                                    this.dataSource = new MatTableDataSource(response);
-    this.dataSource.sort = this.sort;
-    this.dataSource.paginator = this.paginator;
-    });
-}
-
-deleteRecord(row){
-console.log(row);
-this.teamService.deleteSpecialist(row).subscribe();
-this.getTeam();
-}
-
-openDialog() {
-  this.dialog.open(TeamDialogComponent);
+        this.dataSource = new MatTableDataSource(response);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+      });
   }
 
- startEdit(row){
- console.log(row);
- this.dialog.open(TeamDialogUpdateComponent, {data: {iD:row.iD, name:row.name, lastName: row.lastName, study: row.study, country: row.country}});
- }
+  deleteRecord(row) {
+    this.teamService.deleteSpecialist(row).subscribe();
+    this.getTeam();
+  }
+
+  openDialog() {
+    this.dialog.open(TeamDialogComponent);
+  }
+
+  startEdit(row) {
+    this.dialog.open(TeamDialogUpdateComponent, { data: { iD: row.iD, name: row.name, lastName: row.lastName, study: row.study, country: row.country } });
+  }
 
 
 }

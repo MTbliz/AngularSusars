@@ -5,7 +5,6 @@ import {Specialist} from 'src/app/homepage/team/specialist'
 import {Study} from 'src/app/list-filters-studies/study';
 import {Country} from 'src/app/list-filters-countries/country';
 
-
 @Injectable()
 export class TeamService {
 
@@ -15,15 +14,14 @@ test: 'my content',
 
 constructor(private http: HttpClient){ }
 
-teamUrl = '/Team';
+teamUrl = 'http://localhost:8080/Team';
 
 getTeam(): Observable <Specialist[]> {
 return this.http.get<Specialist[]>(this.teamUrl);
 }
 
-
-studiesUrl = '/Studies';
-countriesUrl = 'Countries';
+studiesUrl = 'http://localhost:8080/Studies';
+countriesUrl = 'http://localhost:8080/Countries';
 
 postURL ='http://localhost:8080/Types/test';
 

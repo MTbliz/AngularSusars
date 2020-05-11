@@ -1,24 +1,23 @@
-
-<form #specialistForm="ngForm"  (ngSubmit)="createSpecialist()" novalidate>
+<form #specialistForm="ngForm" (ngSubmit)="createSpecialist()" novalidate>
   <ol class="example-container">
     <li>
       <mat-form-field>
-        <input  matInput placeholder="Name" [(ngModel)] = "teamModel.name" name="name">
+        <input matInput placeholder="Name" [(ngModel)]="teamModel.name" name="name">
       </mat-form-field>
     </li>
     <li>
       <mat-form-field>
-        <input  matInput placeholder="lastName" [(ngModel)] = "teamModel.lastName" name="lastName">
+        <input matInput placeholder="lastName" [(ngModel)]="teamModel.lastName" name="lastName">
       </mat-form-field>
     </li>
     <li>
       <mat-form-field>
-        <input  matInput placeholder="Study" [(ngModel)] = "teamModel.study" name="study">
+        <input matInput placeholder="Study" [(ngModel)]="teamModel.study" name="study">
       </mat-form-field>
     </li>
     <li>
       <mat-form-field>
-        <input  matInput placeholder="Country" [(ngModel)] = "teamModel.country" name="country">
+        <input matInput placeholder="Country" [(ngModel)]="teamModel.country" name="country">
       </mat-form-field>
     </li>
   </ol>

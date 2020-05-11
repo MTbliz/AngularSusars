@@ -1,49 +1,51 @@
-<form #susarForm="ngForm"  (ngSubmit)="createSusar()" novalidate>
+<form #susarForm="ngForm" (ngSubmit)="createSusar()" novalidate>
   <ol class="example-container">
     <li>
       <mat-form-field>
-        <input  matInput placeholder="Study" [(ngModel)] = "data.study" name="study">
+        <input matInput placeholder="Study" [(ngModel)]="data.study" name="study">
       </mat-form-field>
     </li>
     <li>
       <mat-form-field>
-        <input  matInput placeholder="Country" [(ngModel)] = "data.country" name="country">
+        <input matInput placeholder="Country" [(ngModel)]="data.country" name="country">
       </mat-form-field>
     </li>
     <li>
       <mat-form-field>
-        <input  matInput placeholder="Site" [(ngModel)] = "data.site" name="site">
+        <input matInput placeholder="Site" [(ngModel)]="data.site" name="site">
       </mat-form-field>
     </li>
     <li>
       <mat-form-field>
-        <input OnlyNumber="true"  matInput placeholder="Number" [(ngModel)] = "data.number" name="number">
+        <input OnlyNumber="true" matInput placeholder="Number" [(ngModel)]="data.number" name="number">
       </mat-form-field>
     </li>
     <li>
       <mat-form-field>
-        <mat-select placeholder="Type" [(ngModel)] = "data.type"  name="type">
-          <mat-option *ngFor="let susarstype of susarstypes"  [value]="susarstype.value" >{{susarstype.viewValue}}</mat-option>
+        <mat-select placeholder="Type" [(ngModel)]="data.type" name="type">
+          <mat-option *ngFor="let susarstype of susarstypes" [value]="susarstype.value">{{susarstype.viewValue}}
+          </mat-option>
         </mat-select>
       </mat-form-field>
     </li>
     <li>
       <mat-form-field>
-        <input matInput [matDatepicker]="picker1" placeholder="Recipt Date" [(ngModel)] = "data.reciptDate" name="reciptDate">
+        <input matInput [matDatepicker]="picker1" placeholder="Recipt Date" [(ngModel)]="data.reciptDate"
+          name="reciptDate">
         <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
     </li>
     <li>
       <mat-form-field>
-        <input matInput [matDatepicker]="picker2" placeholder="Sent Date" [(ngModel)] = "data.sentDate" name="sentDate">
+        <input matInput [matDatepicker]="picker2" placeholder="Sent Date" [(ngModel)]="data.sentDate" name="sentDate">
         <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
         <mat-datepicker #picker2></mat-datepicker>
       </mat-form-field>
     </li>
     <li>
       <mat-form-field>
-        <input matInput [matDatepicker]="picker3" placeholder="AoR Date" [(ngModel)] = "data.aorDate" name="aorDate">
+        <input matInput [matDatepicker]="picker3" placeholder="AoR Date" [(ngModel)]="data.aorDate" name="aorDate">
         <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
         <mat-datepicker #picker3></mat-datepicker>
       </mat-form-field>
@@ -54,4 +56,3 @@
   <button mat-raised-button color="primary" (click)="closeDialog()">Cancel</button>
   <button mat-raised-button color="primary" type="submit" (click)="updateSusar()">Update</button>
 </div>
-

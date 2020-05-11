@@ -1,13 +1,14 @@
 <mat-expansion-panel>
-<mat-expansion-panel-header>
-  <mat-panel-title>
-    Site
-  </mat-panel-title>
-</mat-expansion-panel-header>
-<mat-selection-list #shoes [(ngModel)]="selectedOptions" (ngModelChange)="onNgModelChange($event)" [style.overflow]="'auto'" [style.height.px]="'300'">
-  <mat-list-option *ngFor="let nsite of sites" [value] ="nsite.site">
-    {{nsite.site}}
-  </mat-list-option>
-</mat-selection-list>
-{{selectedOption}}
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Site
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <mat-selection-list #shoes [(ngModel)]="selectedOptions" (ngModelChange)="onNgModelChange($event)"
+    [style.overflow]="'auto'" [style.height.px]="'300'">
+    <mat-list-option *ngFor="let nsite of sites" [value]="nsite.site">
+      {{nsite.site}}
+    </mat-list-option>
+  </mat-selection-list>
+  {{selectedOption}}
 </mat-expansion-panel>

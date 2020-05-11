@@ -1,55 +1,58 @@
-
-<form #susarForm="ngForm"  (ngSubmit)="createSusar()" novalidate>
-<ol class="example-container">
-  <li>
-    <mat-form-field>
-      <input  matInput placeholder="Study" [(ngModel)] = "susarModel.study" name="study">
-    </mat-form-field>
-  </li>
-  <li>
-    <mat-form-field>
-      <input  matInput placeholder="Country" [(ngModel)] = "susarModel.country" name="country">
-    </mat-form-field>
-  </li>
-  <li>
-    <mat-form-field>
-      <input  matInput placeholder="Site" [(ngModel)] = "susarModel.site" name="site">
-    </mat-form-field>
-  </li>
-  <li>
-<mat-form-field>
-  <input OnlyNumber="true"  matInput placeholder="Number" [(ngModel)] = "susarModel.number" name="number">
-</mat-form-field>
-  </li>
-  <li>
-<mat-form-field>
-  <mat-select placeholder="Type" [(ngModel)] = "susarModel.type"  name="type">
-    <mat-option *ngFor="let susarstype of susarstypes"  [value]="susarstype.value" >{{susarstype.viewValue}}</mat-option>
-  </mat-select>
-</mat-form-field>
-  </li>
-  <li>
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker1" placeholder="Recipt Date" [(ngModel)] = "susarModel.reciptDate" name="reciptDate">
-      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-      <mat-datepicker #picker1></mat-datepicker>
-    </mat-form-field>
-  </li>
-  <li>
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker2" placeholder="Sent Date" [(ngModel)] = "susarModel.sentDate" name="sentDate">
-      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-      <mat-datepicker #picker2></mat-datepicker>
-    </mat-form-field>
-  </li>
-  <li>
-    <mat-form-field>
-      <input  matInput [matDatepicker]="picker3" placeholder="AoR Date" [(ngModel)] = "susarModel.aorDate" name="aorDate">
-      <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
-      <mat-datepicker #picker3></mat-datepicker>
-    </mat-form-field>
-  </li>
-</ol>
+<form #susarForm="ngForm" (ngSubmit)="createSusar()" novalidate>
+  <ol class="example-container">
+    <li>
+      <mat-form-field>
+        <input matInput placeholder="Study" [(ngModel)]="susarModel.study" name="study">
+      </mat-form-field>
+    </li>
+    <li>
+      <mat-form-field>
+        <input matInput placeholder="Country" [(ngModel)]="susarModel.country" name="country">
+      </mat-form-field>
+    </li>
+    <li>
+      <mat-form-field>
+        <input matInput placeholder="Site" [(ngModel)]="susarModel.site" name="site">
+      </mat-form-field>
+    </li>
+    <li>
+      <mat-form-field>
+        <input OnlyNumber="true" matInput placeholder="Number" [(ngModel)]="susarModel.number" name="number">
+      </mat-form-field>
+    </li>
+    <li>
+      <mat-form-field>
+        <mat-select placeholder="Type" [(ngModel)]="susarModel.type" name="type">
+          <mat-option *ngFor="let susarstype of susarstypes" [value]="susarstype.value">{{susarstype.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </li>
+    <li>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker1" placeholder="Recipt Date" [(ngModel)]="susarModel.reciptDate"
+          name="reciptDate">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </li>
+    <li>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker2" placeholder="Sent Date" [(ngModel)]="susarModel.sentDate"
+          name="sentDate">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </li>
+    <li>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker3" placeholder="AoR Date" [(ngModel)]="susarModel.aorDate"
+          name="aorDate">
+        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+        <mat-datepicker #picker3></mat-datepicker>
+      </mat-form-field>
+    </li>
+  </ol>
 </form>
 <div class="buttons">
   <button mat-raised-button color="primary" (click)="closeDialog()">Cancel</button>

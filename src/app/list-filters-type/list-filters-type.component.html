@@ -4,13 +4,11 @@
       SUSAR Type
     </mat-panel-title>
   </mat-expansion-panel-header>
-<mat-selection-list #shoes [(ngModel)]="selectedOptions" (ngModelChange)="onNgModelChange($event)" [style.overflow]="'auto'" [style.height.px]="'300'">
-  <mat-list-option *ngFor="let ntype of types" [value] ="ntype.type">
-    {{ntype.type}}
-  </mat-list-option>
-</mat-selection-list>
-{{selectedOption}}
+  <mat-selection-list #shoes [(ngModel)]="selectedOptions" (ngModelChange)="onNgModelChange($event)"
+    [style.overflow]="'auto'" [style.height.px]="'300'">
+    <mat-list-option *ngFor="let ntype of types" [value]="ntype.type">
+      {{ntype.type}}
+    </mat-list-option>
+  </mat-selection-list>
+  {{selectedOption}}
 </mat-expansion-panel>
-
-
-

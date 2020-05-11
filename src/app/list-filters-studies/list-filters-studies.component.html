@@ -4,10 +4,10 @@
       Study
     </mat-panel-title>
   </mat-expansion-panel-header>
-  <mat-selection-list #shoes [(ngModel)]="selectedOptions" (ngModelChange)="onNgModelChange($event)" [style.overflow]="'auto'" [style.height.px]="'300'">
-    <mat-list-option *ngFor="let nstudy of studies" [value] ="nstudy.study">
+  <mat-selection-list #shoes [(ngModel)]="selectedOptions" (ngModelChange)="onNgModelChange($event)"
+    [style.overflow]="'auto'" [style.height.px]="'300'">
+    <mat-list-option *ngFor="let nstudy of studies" [value]="nstudy.study">
       {{nstudy.study}}
     </mat-list-option>
   </mat-selection-list>
 </mat-expansion-panel>
-

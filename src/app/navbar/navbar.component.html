@@ -3,7 +3,7 @@
     <button mat-button *ngIf="isLoggedIn" routerLink="/#Home/News">Home</button>
     <button mat-button *ngIf="isLoggedIn" routerLink="/#Susars">SUSAR</button>
     <button mat-button *ngIf="isLoggedIn" routerLink="/#Dashboards">Dashboards</button>
-    <button mat-button class="nav-item" *ngIf="isLoggedIn" href="/user" class="nav-link"  routerLink="user">
+    <button mat-button class="nav-item" *ngIf="isLoggedIn" href="/user" class="nav-link" routerLink="user">
       User
     </button>
   </div>
@@ -17,7 +17,7 @@
     </button>
   </div>
 
-  <div class="navbar-nav ml-auto" *ngIf="isLoggedIn" class="nav-link" >
+  <div class="navbar-nav ml-auto" *ngIf="isLoggedIn" class="nav-link">
     <button mat-button class="nav-item" *ngIf="showAdminBoard" href="/admin" class="nav-link" routerLink="admin">
       Admin Board
     </button>
@@ -27,9 +27,8 @@
     <button mat-button class="nav-item">
       {{ username }}
     </button>
-    <button mat-button class="nav-item"   href class="nav-link" (click)="logout()">
+    <button mat-button class="nav-item" href class="nav-link" (click)="logout()">
       LogOut
     </button>
   </div>
 </mat-toolbar>
-

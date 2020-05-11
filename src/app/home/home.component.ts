@@ -8,11 +8,11 @@ import { UserService } from '../_services/user.service';
 })
 export class HomeComponent implements OnInit {
   content: string;
-   private roles: string[];
-    isLoggedIn = false;
-    showAdminBoard = false;
-    showModeratorBoard = false;
-    username: string;
+  private roles: string[];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username: string;
 
   constructor(private userService: UserService) { }
 

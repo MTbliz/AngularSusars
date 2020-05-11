@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Country} from 'src/app/list-filters-countries/country';
-import {SusarService } from 'src/app/susars/susar.service';
-import {Observable} from 'rxjs/Observable';
-import{InteractionService} from 'src/app/susars/interaction.service';
+import { Country } from 'src/app/list-filters-countries/country';
+import { SusarService } from 'src/app/susars/susar.service';
+import { Observable } from 'rxjs/Observable';
+import { InteractionService } from 'src/app/susars/interaction.service';
 
 @Component({
   selector: 'app-list-filters-countries',
@@ -14,41 +14,40 @@ export class ListFiltersCountriesComponent implements OnInit {
 
   selectedOption;
 
-  onNgModelChange($event){
-      console.log($event);
-      this.selectedOption=$event;
-      this._interactionService.sendMessageToTableCountries(this.selectedOption);
-    }
+  onNgModelChange($event) {
+    console.log($event);
+    this.selectedOption = $event;
+    this._interactionService.sendMessageToTableCountries(this.selectedOption);
+  }
 
-    countries: Country[];
+  countries: Country[];
 
-    constructor(private susarService: SusarService, private _interactionService: InteractionService) { }
+  constructor(private susarService: SusarService, private _interactionService: InteractionService) { }
 
-    ngOnInit() {
+  ngOnInit() {
     this._interactionService.refreshTypesMessage$
-        .subscribe(
+      .subscribe(
         message => {
-        if(message === 'refreshTypes') {
-        this.getCountries();
-        }
-        }
-        );
-    this.getCountries();
+          if (message === 'refreshTypes') {
+            this.getCountries();
           }
+        }
+      );
+    this.getCountries();
+  }
 
-  refreshTable(){
-  this._interactionService.sendMessage('refreshTable');
+  refreshTable() {
+    this._interactionService.sendMessage('refreshTable');
+  }
+
+  private getCountries() {
+    this.susarService.getCountries()
+      .subscribe(data => {
+        this.countries = data;
+      });
   }
 
 
-    private getCountries(){
-   this.susarService.getCountries()
-            .subscribe(data => { console.log(data);
-                                        this.countries = data;
-    });
-  }
-
-
-  }
+}
 
 

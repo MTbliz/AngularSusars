@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import{MyTableComponent} from 'src/app/my-table/my-table.component'
-import{ListFiltersTypeComponent} from 'src/app/list-filters-type/list-filters-type.component'
-
+import { MyTableComponent } from 'src/app/my-table/my-table.component'
+import { ListFiltersTypeComponent } from 'src/app/list-filters-type/list-filters-type.component'
 
 @Component({
   selector: 'app-sidenav',
@@ -14,5 +13,4 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
