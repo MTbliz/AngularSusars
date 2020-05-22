@@ -1,0 +1,29 @@
+mat-grid-tile {
+    
+  }
+
+  .left-panel{
+    border-right: 1px solid grey;
+  }
+  
+  .left-panel-list{
+    align-self:flex-start;
+    text-align: left;
+  }
+
+  .right-panel{
+    align-self:flex-start;
+    border-left: 1px solid grey;
+  }
+
+  .center-panel-content{
+    align-content: flex-start;
+  }
+
+  .bottom-panel{
+    border-top: 1px solid grey;
+  }
+  div{
+    width: 100%;
+    height: 100%;
+  }

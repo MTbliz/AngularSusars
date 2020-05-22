@@ -15,6 +15,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardUserComponent } from './board-user/board-user.component';
+import { TrainingsComponent } from './trainings/trainings/trainings.component';
+import { TrainingsActionsComponent } from './trainings/trainings-actions/trainings-actions.component';
 
 
 
@@ -39,6 +41,9 @@ const routes: Routes = [
 { path: 'user', component: BoardUserComponent },
 { path: 'mod', component: BoardModeratorComponent },
 { path: 'admin', component: BoardAdminComponent },
+{ path: 'training-actions', component: TrainingsActionsComponent,
+children:[
+  { path: 'training', component: TrainingsComponent}]},
 { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

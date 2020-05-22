@@ -1,0 +1,34 @@
+<div class="training-form-container">
+    <div class="training-form-content">
+      <div class="form-title">
+        <h1>Training Information</h1>
+      </div>
+      <form (ngSubmit)="updateTraining()" #trainingForm="ngForm">
+        <mat-divider></mat-divider>
+        <mat-form-field class="col-4" >
+          <mat-label> Training Name</mat-label>
+          <input matInput required name="name" [(ngModel)]="data.name">
+        </mat-form-field>
+        <mat-form-field class="col-2" >
+            <mat-label> Version</mat-label>
+            <input matInput required name="version" [(ngModel)]="data.version">
+        </mat-form-field>
+        <mat-form-field class="col-2">
+            <input matInput placeholder="Effective Date" required [matDatepicker]="picker1"  [(ngModel)] = "data.effectiveDate" name="effectiveDate">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+        <mat-form-field class="col-2">
+            <input matInput placeholder="Stop Date" [matDatepicker]="picker2"  [(ngModel)] = "data.stopDate" name="stopDate">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+            
+        </form>
+        <div >
+          <button mat-raised-button color="primary" type="submit" (click)="updateTraining()"[disabled]="!trainingForm.valid"
+            style="margin-left: 10px;">Update Training</button>
+          <button mat-raised-button color="primary" (click)="closeDialog()" style="margin-left: 10px;">Cancel</button>
+        </div>
+      </div>
+</div>

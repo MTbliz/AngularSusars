@@ -1,0 +1,115 @@
+.training-form-container{
+    width: 95%;
+    height: 100%;
+    margin-bottom: 200px;
+    align-self: flex-start;
+    margin: 50px 40px;
+  }
+  
+  .form-title{
+    height: 100%;
+    width:100%;
+    padding: 5%;
+    background-color: #3f51b5;
+    color: white;
+  }
+  
+  .training-form-content{
+    height: 100%;
+    width:100%;
+    padding: 5%;
+    margin-top: 5%;
+  }
+  
+  
+  .col-1{
+    width: 9%;
+    margin: 0.5%;
+  }
+  
+  .col-2{
+    width: 19%;
+    margin: 0px;
+    padding: 0.5%;
+  }
+  
+  .col-3{
+    width: 29%;
+    margin: 0px;
+    padding: 0.5%;
+  }
+  .col-4{
+    width: 39%;
+    margin: 0px;
+    padding: 0.5%;
+  }
+  
+  .col-8{
+    width: 90%;
+    margin: 0px;
+    padding: 0.5%;
+  }
+  
+  .col-10{
+    width: 99%;
+    margin: 0px;
+    padding: 0.5%;
+  }
+  
+  .tab-col-10{
+    width: 10%;
+  }
+  
+  .tab-col-15{
+    width: 15%;
+  }
+  
+  .tab-col-20{
+    width: 20%;
+  }
+  
+  .tab-col-25{
+    width: 25%;
+  }
+  
+  .tab-col-30{
+    width: 30%;
+  }
+  
+  .tab-col-35{
+    width: 35%;
+  }
+  
+  .tab-col-40{
+    width: 40%;
+  }
+  
+  .tab-col-45{
+    width: 45%;
+  }
+  
+  .tab-col-50{
+    width: 50%;
+  }
+  
+  .element-name{
+    width: 99%;
+    margin: 0px;
+    padding: 0.5%;
+  }
+  
+  .element-version{
+    width: 50px;
+  }
+  
+  
+  .element-effectiveDate{
+    width: 130px;
+  
+  }
+  
+  .element-stopDate{
+    width: 130px;
+  }
+  
+  

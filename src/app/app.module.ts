@@ -42,6 +42,9 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
+import { TrainingsComponent } from './trainings/trainings/trainings.component';
+import { TrainingsActionsComponent } from './trainings/trainings-actions/trainings-actions.component';
+import { TrainingDialogUpdateComponent } from './trainings/training-dialog-update/training-dialog-update.component';
 
 
 
@@ -83,9 +86,12 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
     ProfileComponent,
     BoardAdminComponent,
     BoardModeratorComponent,
-    BoardUserComponent
+    BoardUserComponent,
+    TrainingsComponent,
+    TrainingsActionsComponent,
+    TrainingDialogUpdateComponent
   ],
-  entryComponents: [DialogExampleComponent,DialogUpdateComponent,TeamDialogComponent, TeamDialogUpdateComponent],
+  entryComponents: [DialogExampleComponent,DialogUpdateComponent,TeamDialogComponent, TeamDialogUpdateComponent, TrainingDialogUpdateComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

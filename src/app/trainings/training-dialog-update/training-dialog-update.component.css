@@ -1,0 +1,46 @@
+
+
+
+.form-title{
+    height: 100%;
+    width:100%;
+    color: white;
+}
+
+.training-form-content{
+    height: 100%;
+    width:100%;
+}
+.col-1{
+    width: 9%;
+    margin: 0.5%;
+}
+
+.col-2{
+    width: 18%;
+    margin: 0px;
+    padding: 0.5%;
+}
+
+.col-3{
+    width: 29%;
+    margin: 0px;
+    padding: 0.5%;
+}
+.col-4{
+    width: 40%;
+    margin: 0px;
+    padding: 0.5%;
+}
+
+.col-10{
+    width: 99%;
+    margin: 0px;
+    padding: 0.5%;
+}
+
+button {
+    margin-right: 25px;
+    margin-left: 25px;
+    }
+    
